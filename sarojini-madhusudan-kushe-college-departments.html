@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>College Staff - Sarojini Madhusudan Kushe Educational Institution</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <meta name="theme-color" content="#5c1e44" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- =========================================================
+         PAGE SPECIFIC STYLES
+    ========================================================= -->
+    <style>
+        /* --- COLLEGE HERO SECTION --- */
+        .smk-college-hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--smk-rose-soft, #f4e6ec) 0%, var(--smk-ivory, #fcfaf7) 100%);
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 60px 0;
+        }
+
+        .smk-college-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1300px; 
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .smk-college-grid-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px; 
+            align-items: center; 
+        }
+
+        /* --- Left Side: Typography --- */
+        .smk-college-text-col {
+            position: relative;
+            z-index: 2;
+        }
+
+        .smk-college-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: var(--smk-rose, #C8506E);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .smk-college-eyebrow::before {
+            content: '';
+            width: 50px;
+            height: 2px;
+            background: var(--smk-rose, #C8506E);
+        }
+
+        .smk-college-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(52px, 5.5vw, 82px);
+            color: var(--smk-plum, #5c1e44);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+        }
+
+        .smk-college-title span {
+            display: block;
+            color: var(--smk-gold, #D4AF37);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .smk-college-desc {
+            font-family: "DM Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--smk-muted, #6b6b6b);
+            max-width: 480px;
+            margin-bottom: 0;
+        }
+
+        /* --- Right Side: Knowledge Constellation Visual --- */
+        .smk-college-visual-col {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .smk-constellation {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        /* Background Glow */
+        .smk-const-glow {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 130%; height: 130%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(255,255,255,0) 60%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Animated SVG Lines */
+        .smk-const-lines {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .smk-const-lines line {
+            stroke: rgba(212, 175, 55, 0.4);
+            stroke-width: 2;
+            stroke-dasharray: 6 6;
+            vector-effect: non-scaling-stroke;
+            animation: dash-lines 30s linear infinite;
+        }
+
+        @keyframes dash-lines {
+            to { stroke-dashoffset: -200; }
+        }
+
+        /* Central Core */
+        .smk-const-core {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--smk-plum, #5c1e44) 0%, #3a112b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(92, 30, 68, 0.3);
+            z-index: 10;
+            animation: pulse-core 3s ease-in-out infinite alternate;
+        }
+
+        .smk-const-core::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .smk-const-core i {
+            font-size: 65px;
+            color: var(--smk-gold, #D4AF37);
+            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
+        }
+
+        @keyframes pulse-core {
+            0% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2), 0 20px 40px rgba(92, 30, 68, 0.3); }
+            100% { box-shadow: 0 0 60px rgba(212, 175, 55, 0.5), 0 20px 50px rgba(92, 30, 68, 0.5); }
+        }
+
+        /* Floating Department Nodes */
+        .smk-const-node {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: "DM Sans", sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--smk-plum, #5c1e44);
+            box-shadow: 0 10px 25px rgba(92, 30, 68, 0.08);
+            z-index: 5;
+            transition: all 0.3s ease;
+            animation: float-node 4s ease-in-out infinite;
+        }
+
+        .smk-const-node i {
+            font-size: 20px;
+            color: var(--smk-rose, #C8506E);
+        }
+
+        .smk-const-node:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 15px 35px rgba(92, 30, 68, 0.15);
+            border-color: var(--smk-rose, #C8506E);
+            background: #ffffff;
+        }
+
+        /* Node Positions & Animation Delays */
+        .smk-cn-1 { top: 10%; left: 50%; animation-delay: 0s; }
+        .smk-cn-2 { top: 30%; left: 85%; animation-delay: 0.5s; }
+        .smk-cn-3 { top: 70%; left: 85%; animation-delay: 1s; }
+        .smk-cn-4 { top: 90%; left: 50%; animation-delay: 1.5s; }
+        .smk-cn-5 { top: 70%; left: 15%; animation-delay: 2s; }
+        .smk-cn-6 { top: 30%; left: 15%; animation-delay: 2.5s; }
+
+        @keyframes float-node {
+            0% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+            100% { transform: translate(-50%, -50%) translateY(0); }
+        }
+
+        /* --- Responsive Hero --- */
+        @media (max-width: 1199.98px) {
+            .smk-constellation { max-width: 460px; }
+        }
+
+        @media (max-width: 991.98px) {
+            .smk-college-hero { min-height: auto; padding: 80px 0; }
+            .smk-college-grid-hero { grid-template-columns: 1fr; gap: 60px; }
+            .smk-college-text-col { text-align: center; }
+            .smk-college-eyebrow { justify-content: center; }
+            .smk-college-desc { margin-left: auto; margin-right: auto; }
+            .smk-constellation { max-width: 480px; }
+        }
+
+        @media (max-width: 575.98px) {
+            .smk-college-title { font-size: 46px; }
+            .smk-constellation { max-width: 340px; }
+            .smk-const-core { width: 100px; height: 100px; }
+            .smk-const-core i { font-size: 45px; }
+            
+            /* Convert pills to circles on mobile */
+            .smk-const-node { padding: 12px; border-radius: 50%; }
+            .smk-const-node span { display: none; }
+            .smk-const-node i { font-size: 22px; }
+            
+            .smk-cn-1 { top: 8%; left: 50%; }
+            .smk-cn-2 { top: 28%; left: 88%; }
+            .smk-cn-3 { top: 72%; left: 88%; }
+            .smk-cn-4 { top: 92%; left: 50%; }
+            .smk-cn-5 { top: 72%; left: 12%; }
+            .smk-cn-6 { top: 28%; left: 12%; }
+        }
+
+        /* =========================================================
+           COLLEGE STAFF PROFILES SECTION
+        ========================================================= */
+        .smk-profiles-section {
+            position: relative;
+            background: var(--smk-white, #ffffff);
+            padding: 100px 0 120px;
+            overflow: hidden;
+        }
+
+        .smk-profiles-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Header */
+        .smk-profiles-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .smk-profiles-header .smk-college-eyebrow {
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .smk-profiles-header h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 3.5vw, 42px);
+            color: var(--smk-plum, #5c1e44);
+            margin-bottom: 15px;
+        }
+
+        .smk-profiles-header p {
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            color: var(--smk-muted, #6b6b6b);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Card Grid */
+        .smk-faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        /* Faculty Card */
+        .smk-faculty-card {
+            background: var(--smk-white, #ffffff);
+            border: 1px solid var(--smk-border, #eaeaea);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(92, 30, 68, 0.04);
+            transition: all 0.4s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Top Accent Line */
+        .smk-faculty-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--smk-rose, #C8506E), var(--smk-gold, #D4AF37));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 10;
+        }
+
+        .smk-faculty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(92, 30, 68, 0.12);
+            border-color: var(--smk-rose, #C8506E);
+        }
+
+        .smk-faculty-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Image Avatar */
+        .smk-faculty-avatar {
+            width: 100%;
+            height: 260px; /* Increased height for proper portrait framing */
+            background: var(--smk-powder, #f9f0f4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .smk-faculty-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s ease;
+        }
+
+        .smk-faculty-card:hover .smk-faculty-photo {
+            transform: scale(1.08);
+        }
+
+        /* The white curve overlay at the bottom of the image */
+        .smk-faculty-avatar::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -10%;
+            width: 120%;
+            height: 30px;
+            background: var(--smk-white, #ffffff);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        /* Faculty Info */
+        .smk-faculty-info {
+            padding: 10px 20px 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .smk-faculty-name {
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            color: var(--smk-plum, #5c1e44);
+            margin-bottom: 4px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .smk-faculty-role {
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--smk-rose, #C8506E);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .smk-faculty-qual {
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            color: var(--smk-muted, #6b6b6b);
+            background: var(--smk-ivory, #fcfaf7);
+            padding: 8px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px solid var(--smk-border, #eaeaea);
+            line-height: 1.4;
+            margin-top: auto;
+        }
+
+        /* --- Responsive Details --- */
+        @media (max-width: 1199.98px) {
+            .smk-faculty-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .smk-profiles-section { padding: 80px 0; }
+            .smk-faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .smk-faculty-grid {
+                grid-template-columns: 1fr;
+            }
+            .smk-faculty-avatar {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="smk-header" id="smkHeader">
+    <!-- TOP BAR -->
+    <div class="smk-topbar">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="smk-topbar-inner">
+                <div class="smk-contact-list">
+                    <a href="tel:+918242423332" class="smk-contact">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>+91 824 2423332</span>
+                    </a>
+                    <span class="smk-divider"></span>
+                    <a href="tel:+919355423332" class="smk-contact">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>+91 93554 23332</span>
+                    </a>
+                    <span class="smk-divider"></span>
+                    <a href="mailto:info@smkushe.org" class="smk-contact">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>info@smkushe.org</span>
+                    </a>
+                </div>
+                <div class="smk-top-right">
+                    <div class="smk-admission">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span>Admission Open 2026 - 27</span>
+                    </div>
+                    <div class="smk-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="smk-main">
+        <div class="container-fluid px-3 px-lg-4 h-100">
+            <div class="smk-main-inner">
+                <!-- LOGO -->
+                <a href="index.html" class="smk-logo-link">
+                    <figure class="cr-figure">
+                        <img src="images/sarojini-madhusudan-kushe-logo.png" alt="Sarojini Madhusudan Kushe Educational Institution" class="smk-logo">
+                        <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution</figcaption>
+                    </figure>
+                </a>
+
+                <!-- MENU BUTTON -->
+                <button type="button" class="smk-menu-button" data-bs-toggle="offcanvas" data-bs-target="#smkMenu" aria-controls="smkMenu" aria-label="Open Menu">
+                    <span class="smk-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article>
+    <!-- =========================================================
+         COLLEGE HERO SECTION
+    ========================================================= -->
+    <section class="smk-college-hero">
+        <div class="smk-college-container">
+            <div class="smk-college-grid-hero">
+                
+                <!-- Left Side: Typography -->
+                <div class="smk-college-text-col">
+                    <div class="smk-college-eyebrow">Department of Higher Education</div>
+                    
+                    <h1 class="smk-college-title">
+                        College
+                        <span>Faculty</span>
+                    </h1>
+                    
+                    <p class="smk-college-desc">
+                        Empowering students with advanced knowledge, critical thinking, and professional skills. Meet the distinguished educators guiding our college students toward academic excellence.
+                    </p>
+                </div>
+
+                <!-- Right Side: Knowledge Constellation Visual -->
+                <div class="smk-college-visual-col">
+                    <div class="smk-constellation">
+                        
+                        <!-- Background Glow -->
+                        <div class="smk-const-glow"></div>
+
+                        <!-- Animated Connecting Lines -->
+                        <svg class="smk-const-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <line x1="50" y1="50" x2="50" y2="10" />
+                            <line x1="50" y1="50" x2="85" y2="30" />
+                            <line x1="50" y1="50" x2="85" y2="70" />
+                            <line x1="50" y1="50" x2="50" y2="90" />
+                            <line x1="50" y1="50" x2="15" y2="70" />
+                            <line x1="50" y1="50" x2="15" y2="30" />
+                        </svg>
+
+                        <!-- Central Hub -->
+                        <div class="smk-const-core">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+
+                        <!-- Department Nodes -->
+                        <div class="smk-const-node smk-cn-1">
+                            <i class="bi bi-translate"></i><span>Languages</span>
+                        </div>
+                        <div class="smk-const-node smk-cn-2">
+                            <i class="bi bi-currency-exchange"></i><span>Commerce</span>
+                        </div>
+                        <div class="smk-const-node smk-cn-3">
+                            <i class="bi bi-thermometer-half"></i><span>Science</span>
+                        </div>
+                        <div class="smk-const-node smk-cn-4">
+                            <i class="bi bi-cpu"></i><span>Comp. Science</span>
+                        </div>
+                        <div class="smk-const-node smk-cn-5">
+                            <i class="bi bi-graph-up"></i><span>Economics</span>
+                        </div>
+                        <div class="smk-const-node smk-cn-6">
+                            <i class="bi bi-activity"></i><span>Sports</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         COLLEGE STAFF PROFILES SECTION
+    ========================================================= -->
+    <section class="smk-profiles-section">
+        <div class="smk-profiles-container">
+            
+            <!-- Section Header -->
+            <div class="smk-profiles-header">
+                <div class="smk-college-eyebrow">Our Academic Leaders</div>
+                <h2>Meet the Faculty</h2>
+                <p>Dedicated professionals bringing a wealth of knowledge and experience to the college classrooms.</p>
+            </div>
+
+            <div class="smk-faculty-grid">
+                
+                <!-- 1. CHANDRIKA -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/chandrika.jpg" alt="Chandrika" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Chandrika</h3>
+                        <div class="smk-faculty-role">Lect. in Economics</div>
+                        <span class="smk-faculty-qual">M.A, B.Ed, PGDCA</span>
+                    </div>
+                </div>
+
+                <!-- 2. Vinutha R -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/vinutha-r.jpg" alt="Vinutha R" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Vinutha R</h3>
+                        <div class="smk-faculty-role">Lect. in Commerce</div>
+                        <span class="smk-faculty-qual">M.Com, MBA, B.Ed</span>
+                    </div>
+                </div>
+
+                <!-- 3. Pushpavathi -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/pushpavathi.jpg" alt="Pushpavathi" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Pushpavathi</h3>
+                        <div class="smk-faculty-role">Lect. in Kannada</div>
+                        <span class="smk-faculty-qual">M.A, B.Ed</span>
+                    </div>
+                </div>
+
+                <!-- 4. Jayashree Kotian -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/jayashree-kotian.jpg" alt="Jayashree Kotian" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Jayashree Kotian</h3>
+                        <div class="smk-faculty-role">Lect. in English</div>
+                        <span class="smk-faculty-qual">M.A, B.Ed</span>
+                    </div>
+                </div>
+
+                <!-- 6. Akshitha Shetty -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/akshitha-shetty.jpg" alt="Akshitha Shetty" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Akshitha Shetty</h3>
+                        <div class="smk-faculty-role">Lect. in Computer Science</div>
+                        <span class="smk-faculty-qual">MCA</span>
+                    </div>
+                </div>
+
+                <!-- 7. Kavitha Ramesh -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/kavitha-ramesh.jpg" alt="Kavitha Ramesh" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Kavitha Ramesh</h3>
+                        <div class="smk-faculty-role">Lect. in Biology</div>
+                        <span class="smk-faculty-qual">M.Sc, M. Phil, B.Ed</span>
+                    </div>
+                </div>
+
+                <!-- 8. Shilpa Acharya -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/shilpa-acharya.jpg" alt="Shilpa Acharya" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Shilpa Acharya</h3>
+                        <div class="smk-faculty-role">Lect. in Chemistry</div>
+                        <span class="smk-faculty-qual">M.Sc</span>
+                    </div>
+                </div>
+
+                <!-- 9. Sridevi Shetty -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/sridevi-shetty.jpg" alt="Sridevi Shetty" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Sridevi Shetty</h3>
+                        <div class="smk-faculty-role">Lect. in Mathematics</div>
+                        <span class="smk-faculty-qual">M.Sc, B.Ed</span>
+                    </div>
+                </div>
+
+                <!-- 10. Deepika Shetty -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/deepika-shetty.jpg" alt="Deepika Shetty" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Deepika Shetty</h3>
+                        <div class="smk-faculty-role">Lect. in Physics</div>
+                        <span class="smk-faculty-qual">M.Sc, B.Ed</span>
+                    </div>
+                </div>
+
+                <!-- 11. Pushparaj -->
+                <div class="smk-faculty-card">
+                    <div class="smk-faculty-avatar">
+                        <img src="images/college-staff/pushparaj.jpg" alt="Pushparaj" class="smk-faculty-photo">
+                    </div>
+                    <div class="smk-faculty-info">
+                        <h3 class="smk-faculty-name">Pushparaj</h3>
+                        <div class="smk-faculty-role">Physical Director</div>
+                        <span class="smk-faculty-qual">M.PED</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</article>
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+<footer class="smk-footer">
+    <div class="smk-footer-glow"></div>
+
+    <div class="smk-footer-main">
+        <div class="container">
+            <div class="smk-footer-brand-row">
+                <div class="smk-footer-brand">
+                    <a href="index.html" class="smk-footer-logo" aria-label="Sarojini Madhusudan Kushe Educational Institution">
+                        <figure class="cr-figure">
+                            <img src="images/sarojini-madhusudan-kushe-logo1.png" alt="Sarojini Madhusudan Kushe Educational Institution">
+                            <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution</figcaption>
+                        </figure>
+                    </a>
+                    <div class="smk-footer-brand-line"></div>
+                    <p class="smk-footer-description">
+                        Nurturing minds, building brighter futures through quality education, strong values and lifelong learning.
+                    </p>
+                    <div class="smk-footer-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="smk-footer-links-area">
+                    <div>
+                        <h3 class="smk-footer-group-title">Quick Links <span></span></h3>
+                        <ul class="smk-footer-links">
+                            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-about-sm-kushe.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-courses.html"><i class="bi bi-chevron-right"></i> Courses Offered</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-hods-staff.html"><i class="bi bi-chevron-right"></i> Departments &amp; Staff</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-facilities.html"><i class="bi bi-chevron-right"></i> Facilities</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="smk-footer-group-title">Explore <span></span></h3>
+                        <ul class="smk-footer-links">
+                            <li><a href="sarojini-madhusudan-kushe-academic-achievements.html"><i class="bi bi-chevron-right"></i> Achievements</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-news-events.html"><i class="bi bi-chevron-right"></i> News &amp; Events</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="smk-footer-group-title">Student Support <span></span></h3>
+                        <ul class="smk-footer-links">
+                            <li><a href="sarojini-madhusudan-kushe-student-space.html"><i class="bi bi-chevron-right"></i> Student Space</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-scholarships.html"><i class="bi bi-chevron-right"></i> Scholarships</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-mentor-mentee.html"><i class="bi bi-chevron-right"></i> Mentor - Mentee</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-class-teacher.html"><i class="bi bi-chevron-right"></i> Class Teacher</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-academic-calendar.html"><i class="bi bi-chevron-right"></i> Academic Calendar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="smk-footer-contact-strip">
+                <div class="smk-footer-contact-item">
+                    <div class="smk-footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                    <div>
+                        <p class="smk-footer-contact-label">Call Us</p>
+                        <a href="tel:+918242423332" class="smk-footer-contact-text">+91 824 2423332</a><br>
+                        <a href="tel:+919355423332" class="smk-footer-contact-text">+91 93554 23332</a>
+                    </div>
+                </div>
+                <div class="smk-footer-contact-item">
+                    <div class="smk-footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <p class="smk-footer-contact-label">Email</p>
+                        <a href="mailto:info@smkushe.org" class="smk-footer-contact-text">info@smkushe.org</a>
+                    </div>
+                </div>
+                <div class="smk-footer-contact-item">
+                    <div class="smk-footer-contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <p class="smk-footer-contact-label">Visit Us</p>
+                        <p class="smk-footer-contact-text">P.V.S. Baug, Attavar, Mangalore - 575001, Karnataka, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="smk-footer-bottom">
+        <div class="container">
+            <div class="smk-footer-bottom-grid">
+                <p class="smk-footer-copyright">© 2026 Sarojini Madhusudan Kushe Educational Institution. All Rights Reserved.</p>
+                <div class="smk-footer-motto">
+                    <span class="smk-footer-motto-line"></span>
+                    <span class="smk-footer-motto-text">LEARN &nbsp;•&nbsp; GROW &nbsp;•&nbsp; EXCEL</span>
+                    <span class="smk-footer-motto-line"></span>
+                </div>
+                <div class="smk-footer-powered">
+                    <span>Powered by</span>
+                    <strong>Audira Solutions Private Limited</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================================
+     OFFCANVAS MENU
+========================================================= -->
+<div class="offcanvas offcanvas-end smk-offcanvas" tabindex="-1" id="smkMenu" aria-labelledby="smkMenuLabel">
+    <div class="smk-offcanvas-head">
+        <figure class="cr-figure">
+            <img src="images/sarojini-madhusudan-kushe-logo1.png" alt="Sarojini Madhusudan Kushe Educational Institution" class="smk-offcanvas-logo">
+            <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution</figcaption>
+        </figure>
+        <button type="button" class="smk-close" data-bs-dismiss="offcanvas" aria-label="Close Menu">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="smk-menu-body">
+        <div class="smk-menu-intro">
+            <div class="smk-menu-intro-title" id="smkMenuLabel">Explore Our Institution</div>
+            <p class="smk-menu-intro-text">Discover academics, facilities, achievements and student support.</p>
+        </div>
+
+        <div class="smk-menu-grid">
+            <div class="smk-menu-column">
+                <div class="smk-menu-card">
+                    <div class="smk-menu-item">
+                        <a href="index.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-house-door-fill"></i></span>
+                            <span>Home</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-person-fill"></i></span>
+                            <span>About Us</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-about-sm-kushe.html">About SM Kushe</a>
+                            <a href="sarojini-madhusudan-kushe-principal-message.html">Principal's Message</a>
+                            <a href="sarojini-madhusudan-kushe-vice-principal-message.html">Vice Principal's Message</a>
+                            <a href="sarojini-madhusudan-kushe-head-master-message.html">Head Master's Message</a>
+                        </div>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-courses.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-book-fill"></i></span>
+                            <span>Courses Offered</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-people-fill"></i></span>
+                            <span>Departments &amp; Staff</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-hods-staff.html">HODs and staffs</a>
+                            <a href="sarojini-madhusudan-kushe-college-departments.html">College</a>
+                            <a href="sarojini-madhusudan-kushe-school-departments.html">School</a>
+                        </div>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-facilities.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-building-fill"></i></span>
+                            <span>Facilities</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-trophy-fill"></i></span>
+                            <span>Achievements</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-academic-achievements.html">Academic Achievements</a>
+                            <a href="sarojini-madhusudan-kushe-cultural-achievements.html">Cultural Achievements</a>
+                            <a href="sarojini-madhusudan-kushe-extracurricular-activities.html">Extracurricular Activities</a>
+                            <a href="sarojini-madhusudan-kushe-sports.html">Sports</a>
+                            <a href="sarojini-madhusudan-kushe-rangers-rovers.html">Rangers &amp; Rovers</a>
+                            <a href="sarojini-madhusudan-kushe-bulbul.html">Bulbul</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="smk-menu-column">
+                <div class="smk-menu-card">
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-mortarboard-fill"></i></span>
+                            <span>Student Support</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-student-space.html">Student Space (Separate Login)</a>
+                            <a href="sarojini-madhusudan-kushe-mentor-mentee.html">Mentor–Mentee</a>
+                            <a href="sarojini-madhusudan-kushe-class-teacher.html">Class Teacher</a>
+                            <a href="sarojini-madhusudan-kushe-scholarships.html">Scholarships</a>
+                            <a href="sarojini-madhusudan-kushe-capacity-enhancement-activities.html">Capacity Enhancement Activities</a>
+                            <a href="sarojini-madhusudan-kushe-academic-calendar.html">Academic Calendar</a>
+                        </div>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-news-events.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-calendar-event-fill"></i></span>
+                            <span>News &amp; Events</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-contact.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-telephone-fill"></i></span>
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script> 
+<script>
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+const smkHeader = document.getElementById("smkHeader");
+let smkScrollTicking = false;
+
+function smkHandleScroll() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 0) {
+        smkHeader.classList.add("scrolled");
+    } else {
+        smkHeader.classList.remove("scrolled");
+    }
+    smkScrollTicking = false;
+}
+
+window.addEventListener("scroll", function() {
+    if (!smkScrollTicking) {
+        window.requestAnimationFrame(smkHandleScroll);
+        smkScrollTicking = true;
+    }
+}, { passive: true });
+
+smkHandleScroll();
+
+/* =========================================================
+   SUBMENU
+========================================================= */
+const smkSubmenuButtons = document.querySelectorAll(".smk-submenu-toggle");
+smkSubmenuButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const currentItem = this.closest(".smk-menu-item");
+        const wasOpen = currentItem.classList.contains("open");
+
+        document.querySelectorAll(".smk-menu-item.open").forEach(function(item) {
+            item.classList.remove("open");
+        });
+
+        if (!wasOpen) {
+            currentItem.classList.add("open");
+        }
+    });
+});
+
+/* =========================================================
+   NORMAL LINKS CLOSE MENU
+========================================================= */
+document.querySelectorAll(".smk-menu-link:not(.smk-submenu-toggle)").forEach(function(link) {
+    link.addEventListener("click", function() {
+        const menu = document.getElementById("smkMenu");
+        const instance = bootstrap.Offcanvas.getInstance(menu);
+        if (instance) {
+            instance.hide();
+        }
+    });
+});
+
+/* =========================================================
+   RESET SUBMENUS WHEN MENU CLOSES
+========================================================= */
+document.getElementById("smkMenu").addEventListener("hidden.bs.offcanvas", function() {
+    document.querySelectorAll(".smk-menu-item.open").forEach(function(item) {
+        item.classList.remove("open");
+    });
+});
+
+/* =========================================================
+   ALWAYS START OFFCANVAS FROM PAGE TOP
+========================================================= */
+document.getElementById("smkMenu").addEventListener("show.bs.offcanvas", function() {
+    this.style.top = "0px";
+    this.style.bottom = "0px";
+    this.style.height = "100vh";
+});
+</script>
+</body>
+</html>

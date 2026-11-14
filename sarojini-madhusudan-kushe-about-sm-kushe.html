@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Us - Sarojini Madhusudan Kushe Educational Institution</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <meta name="theme-color" content="#5c1e44" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- =========================================================
+         PAGE SPECIFIC STYLES
+    ========================================================= -->
+    <style>
+        /* --- HERO SECTION (Curved Split-Banner) --- */
+        .smk-about-hero {
+            position: relative;
+            background: linear-gradient(90deg, var(--smk-plum) 50%, var(--smk-ivory) 50%);
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .smk-about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: url('images/smk-leaves.png') center/cover no-repeat;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .smk-about-text-col {
+            position: relative;
+            z-index: 2;
+            padding: 80px 10% 80px 12%;
+        }
+
+        .smk-about-text-wrap {
+            position: relative;
+        }
+
+        .smk-about-text-wrap::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 15%;
+            width: 2px;
+            height: 70%;
+            background: linear-gradient(to bottom, var(--smk-gold), transparent);
+        }
+
+        .smk-about-hero .smk-eyebrow {
+            color: var(--smk-gold);
+            font-size: 13px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            font-family: "DM Sans", sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .smk-about-hero .smk-eyebrow::before {
+            content: '';
+            background: var(--smk-gold);
+            width: 60px;
+            height: 2px;
+        }
+
+        .smk-about-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(60px, 6.5vw, 95px);
+            color: #ffffff;
+            line-height: 0.95;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+
+        .smk-about-title span {
+            display: block;
+            color: var(--smk-rose);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .smk-about-desc {
+            font-family: "DM Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 450px;
+            margin: 0;
+        }
+
+        .smk-about-image-col {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        .smk-about-image-container {
+            position: relative;
+            width: 115%;
+            margin-left: -15%;
+            height: 560px;
+        }
+
+        .smk-about-shape {
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            transform: translateY(-50%);
+            width: 550px;
+            height: 550px;
+            border: 2px solid var(--smk-gold);
+            border-radius: 50%;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .smk-about-main-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 350px 0 0 350px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(44, 24, 36, 0.25);
+            z-index: 2;
+            margin: 0;
+            border-left: 12px solid var(--smk-white);
+        }
+
+        .smk-about-main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .smk-about-badge {
+            position: absolute;
+            bottom: 40px;
+            right: 5%;
+            background: var(--smk-plum-dark);
+            color: #ffffff;
+            padding: 25px 40px 25px 35px;
+            border-radius: 60px 0 0 60px;
+            box-shadow: 0 20px 40px rgba(44, 24, 36, 0.3);
+            z-index: 4;
+            border-left: 6px solid var(--smk-gold);
+        }
+
+        .smk-about-badge h4 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            color: var(--smk-rose-light);
+        }
+
+        .smk-about-badge p {
+            margin: 5px 0 0;
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+
+        /* --- IMPROVED DETAILS SECTION --- */
+        .smk-details-section {
+            position: relative;
+            background: var(--smk-ivory);
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .smk-details-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: var(--smk-rose-soft);
+            opacity: 0.3;
+            border-radius: 500px 0 0 500px;
+            z-index: 0;
+        }
+
+        .smk-details-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .smk-details-grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        /* Left Side: Creative Image Layout */
+        .smk-image-column {
+            position: relative;
+            padding: 20px;
+        }
+
+        .smk-image-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 85%;
+            height: 90%;
+            background: var(--smk-plum);
+            border-radius: 24px;
+            z-index: 1;
+        }
+
+        .smk-image-column::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            width: 180px;
+            height: 180px;
+            border: 3px solid var(--smk-gold);
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .smk-rounded-image {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(92, 30, 68, 0.15);
+            z-index: 2;
+            margin: 0;
+            border: 8px solid var(--smk-white);
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .smk-rounded-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .smk-image-floating-badge {
+            position: absolute;
+            top: 50%;
+            right: -25px;
+            transform: translateY(-50%);
+            background: var(--smk-white);
+            padding: 15px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(92, 30, 68, 0.15);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid var(--smk-gold);
+        }
+
+        .smk-image-floating-badge i {
+            font-size: 28px;
+            color: var(--smk-plum);
+        }
+
+        .smk-image-floating-badge span {
+            display: block;
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--smk-plum);
+            line-height: 1.3;
+        }
+
+        /* Right Side: Improved Typography */
+        .smk-text-column {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Tagline */
+        .smk-tagline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--smk-rose);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .smk-tagline::before {
+            content: '';
+            width: 35px;
+            height: 2px;
+            background: var(--smk-rose);
+        }
+
+        /* Small Heading */
+        .smk-section-heading {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 4vw, 46px);
+            color: var(--smk-plum);
+            line-height: 1.15;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Body Text */
+        .smk-body-text {
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--smk-muted);
+            margin-bottom: 25px;
+        }
+
+        .smk-body-text strong {
+            color: var(--smk-plum);
+            font-weight: 600;
+        }
+
+        /* Info Box (White Background Card for Last Paragraph) */
+        .smk-info-block {
+            position: relative;
+            background: var(--smk-white);
+            padding: 30px 35px;
+            border-radius: 16px;
+            margin-top: 25px;
+            box-shadow: 0 15px 40px rgba(92, 30, 68, 0.06);
+            border-left: 5px solid var(--smk-rose);
+        }
+
+        .smk-info-block p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--smk-text);
+        }
+
+        /* --- NEW MOTTO, VISION & PURPOSE SECTION --- */
+        .smk-pillars-section {
+            position: relative;
+            background: #ffffff;
+            padding: 100px 0 120px;
+            overflow: hidden;
+        }
+
+        /* Subtle background decor */
+        .smk-pillars-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, var(--smk-powder) 0%, transparent 60%);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .smk-pillars-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Header */
+        .smk-pillars-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .smk-pillars-header .smk-tagline {
+            justify-content: center;
+        }
+
+        .smk-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        /* Base Card Styles */
+        .smk-pillar-card {
+            position: relative;
+            padding: 45px 35px;
+            border-radius: 24px;
+            background: var(--smk-white);
+            box-shadow: 0 20px 50px rgba(92, 30, 68, 0.08);
+            border: 1px solid var(--smk-border);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .smk-pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(92, 30, 68, 0.15);
+        }
+
+        .smk-pillar-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .smk-pillar-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            color: var(--smk-plum);
+            margin-bottom: 15px;
+        }
+
+        .smk-pillar-card p {
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--smk-muted);
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        /* Center Card (Motto) - Highlighted */
+        .smk-pillar-card.smk-card-motto {
+            background: var(--smk-plum);
+            border-color: var(--smk-plum);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .smk-pillar-card.smk-card-motto:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 30px 70px rgba(92, 30, 68, 0.3);
+        }
+
+        .smk-card-motto .smk-pillar-icon {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--smk-gold);
+        }
+
+        .smk-card-motto h3 {
+            color: #ffffff;
+        }
+
+        .smk-card-motto p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .smk-card-motto .smk-motto-sub {
+            display: block;
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--smk-gold);
+            margin-bottom: 10px;
+        }
+
+        /* Side Cards (Vision & Purpose) */
+        .smk-card-vision .smk-pillar-icon {
+            background: var(--smk-powder);
+            color: var(--smk-plum);
+        }
+
+        .smk-card-purpose .smk-pillar-icon {
+            background: var(--smk-rose-soft);
+            color: var(--smk-rose);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1199.98px) {
+            .smk-about-text-col { padding: 80px 5% 80px 10%; }
+            .smk-about-image-container { height: 480px; margin-left: -10%; }
+            .smk-about-shape { width: 450px; height: 450px; }
+            
+            .smk-details-grid { gap: 50px; }
+            .smk-rounded-image { height: 500px; }
+            .smk-image-column::before { width: 80%; height: 85%; }
+
+            .smk-pillars-grid { gap: 20px; }
+            .smk-pillar-card { padding: 35px 25px; }
+        }
+
+        @media (max-width: 991.98px) {
+            /* Hero Stack */
+            .smk-about-hero {
+                background: var(--smk-plum);
+                flex-direction: column;
+                padding-top: 90px;
+                padding-bottom: 90px;
+            }
+            .smk-about-hero::before { width: 100%; }
+            .smk-about-text-col { padding: 0 20px; text-align: center; }
+            .smk-about-text-wrap { display: flex; flex-direction: column; align-items: center; }
+            .smk-about-text-wrap::before { display: none; }
+            .smk-about-hero .smk-eyebrow { justify-content: center; }
+            .smk-about-title span { display: inline-block; }
+            .smk-about-desc { margin: 0 auto; }
+            .smk-about-image-col { margin-top: 60px; justify-content: center; }
+            .smk-about-image-container { width: 90%; margin-left: 0; height: 450px; }
+            .smk-about-main-img { border-radius: 250px 250px 0 0; border-left: none; border-top: 10px solid var(--smk-white); }
+            .smk-about-shape { display: none; }
+            .smk-about-badge { right: 0; bottom: -20px; border-radius: 50px; border-left: none; border-bottom: 5px solid var(--smk-gold); padding: 15px 30px; }
+            .smk-about-badge h4 { font-size: 22px; }
+
+            /* Details Section Stack */
+            .smk-details-section { padding: 80px 0; }
+            .smk-details-grid { display: flex; flex-direction: column; gap: 60px; }
+            
+            .smk-image-column { width: 100%; max-width: 500px; margin: 0 auto; padding: 10px; }
+            .smk-rounded-image { height: 400px; }
+            .smk-image-floating-badge { right: 0; padding: 12px 18px; }
+            .smk-image-column::after { width: 120px; height: 120px; right: -10px; bottom: -10px; }
+            
+            .smk-text-column { text-align: left; padding: 0 15px; }
+
+            /* Pillars Section */
+            .smk-pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .smk-pillar-card.smk-card-motto {
+                transform: scale(1);
+            }
+            .smk-pillar-card.smk-card-motto:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .smk-about-image-container { height: 350px; }
+            .smk-about-badge { right: 50%; transform: translateX(50%); bottom: -25px; }
+            
+            .smk-rounded-image { height: 320px; }
+            .smk-image-column::before { width: 90%; height: 85%; }
+            
+            .smk-info-block { padding: 25px; }
+            .smk-pillars-section { padding: 60px 0 80px; }
+            .smk-pillar-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="smk-header" id="smkHeader">
+    <!-- TOP BAR -->
+    <div class="smk-topbar">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="smk-topbar-inner">
+                <div class="smk-contact-list">
+                    <a href="tel:+918242423332" class="smk-contact">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>+91 824 2423332</span>
+                    </a>
+                    <span class="smk-divider"></span>
+                    <a href="tel:+919355423332" class="smk-contact">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>+91 93554 23332</span>
+                    </a>
+                    <span class="smk-divider"></span>
+                    <a href="mailto:info@smkushe.org" class="smk-contact">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>info@smkushe.org</span>
+                    </a>
+                </div>
+                <div class="smk-top-right">
+                    <div class="smk-admission">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span>Admission Open 2026 - 27</span>
+                    </div>
+                    <div class="smk-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="smk-main">
+        <div class="container-fluid px-3 px-lg-4 h-100">
+            <div class="smk-main-inner">
+                <!-- LOGO -->
+                <a href="index.html" class="smk-logo-link">
+                    <figure class="cr-figure">
+                        <img src="images/sarojini-madhusudan-kushe-logo.png" alt="Sarojini Madhusudan Kushe Educational Institution" class="smk-logo">
+                        <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution</figcaption>
+                    </figure>
+                </a>
+
+                <!-- MENU BUTTON -->
+                <button type="button" class="smk-menu-button" data-bs-toggle="offcanvas" data-bs-target="#smkMenu" aria-controls="smkMenu" aria-label="Open Menu">
+                    <span class="smk-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article>
+    <!-- =========================================================
+         HERO SECTION (Curved Split-Banner)
+    ========================================================= -->
+    <section class="smk-about-hero">
+        <div class="container-fluid px-0">
+            <div class="row g-0 w-100">
+                
+                <!-- LEFT: Typography -->
+                <div class="col-lg-6 smk-about-text-col d-flex align-items-center">
+                    <div class="smk-about-text-wrap">
+                        <div class="smk-eyebrow">
+                            Discover Our Journey
+                        </div>
+                        <h1 class="smk-about-title">
+                            About
+                            <span>SMK</span>
+                        </h1>
+                        <p class="smk-about-desc">
+                            Sarojini Madhusudan Kushe Educational Institution is committed to providing quality education in a caring, supportive, and inspiring environment, nurturing minds for a brighter future.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Arch Visual -->
+                <div class="col-lg-6 smk-about-image-col">
+                    <div class="smk-about-image-container">
+                        <!-- Decorative Gold Ring -->
+                        <div class="smk-about-shape"></div>
+
+                        <!-- Arched Image -->
+                        <figure class="cr-figure smk-about-main-img">
+                            <img src="images/sarojini-madhusudan-kushe-about1.jpg" alt="Sarojini Madhusudan Kushe Educational Institution Campus">
+                            <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution Campus</figcaption>
+                        </figure>
+
+                        <!-- Floating Badge -->
+                        <div class="smk-about-badge">
+                            <h4>Excellence</h4>
+                            <p>Since Inception</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         DETAILS SECTION
+    ========================================================= -->
+    <section class="smk-details-section">
+        <div class="smk-details-container">
+            <div class="smk-details-grid">
+                
+                <!-- Left Side: Creative Rounded Image -->
+                <div class="smk-image-column">
+                    
+                    <!-- Main Rounded Image -->
+                    <figure class="cr-figure smk-rounded-image">
+                        <img src="images/sarojini-madhusudan-kushe-about-page-1.jpg" alt="SMK Campus Building">
+                        <figcaption class="cr-only">SMK Campus Building</figcaption>
+                    </figure>
+
+                    <!-- Floating Info Badge -->
+                    <div class="smk-image-floating-badge">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <div>
+                            <span>Est.<br>2000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Typography -->
+                <div class="smk-text-column">
+                    
+                    <!-- Tagline -->
+                    <div class="smk-tagline">Our Heritage</div>
+
+                    <!-- Small Heading -->
+                    <h2 class="smk-section-heading">
+                        A Legacy of Excellence & Holistic Growth
+                    </h2>
+                    
+                    <!-- Paragraph 1 -->
+                    <p class="smk-body-text">
+                        Sarojini Madhusudan Kushe Educational Institution is established under the aegis of the Sarojini Madhusudan Kushe Educational Trust, which functions as a part of the P.V.S. Memorial Charitable Trust, Mangaluru.
+                    </p>
+                    
+                    <!-- Paragraph 2 -->
+                    <p class="smk-body-text">
+                        The institution was founded in the year 2000 by Late Sri Madhusudhana Kushe, the then Chairman of the P.V.S. Group of Companies, with a vision to provide quality education and foster the holistic development of young learners. The institution was graciously blessed and inaugurated by His Holiness Jagadguru Sri Sri Bharathi Tirtha Mahasannidhanam of Sri Sringeri Sharada Peetham, marking a significant milestone in its establishment.
+                    </p>
+
+                    <!-- Paragraph 3 -->
+                    <p class="smk-body-text">
+                        The activities of the Trust are presently spearheaded by its Managing Trustee, <strong>Smt. Sarojini Madhusudan Kushe</strong>, with the active support and cooperation of the other members of the Trust. Under their guidance and stewardship, the institution continues to pursue its commitment to educational excellence and institutional development. <strong>Prof. Sainath Malligemadu</strong>, the Principal, plays a pivotal role in the academic, administrative, and developmental activities of the institution, contributing to its sustained progress.
+                    </p>
+
+                    <!-- Paragraph 4 (White Background Card) -->
+                    <div class="smk-info-block">
+                        <p>
+                            Sarojini Madhusudan Kushe Educational Institution is a co-educational, unaided institution offering education from Lower Kindergarten (L.K.G.) to the Pre-University Course (PUC), in accordance with the curriculum prescribed by the Government of Karnataka. The institution is committed to providing a conducive learning environment that promotes academic excellence, character formation, discipline, and the holistic development of every student.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         NEW SECTION: OUR MOTTO, VISION & PURPOSE
+    ========================================================= -->
+    <section class="smk-pillars-section">
+        <div class="smk-pillars-container">
+            
+            <!-- Section Header -->
+            <div class="smk-pillars-header">
+                <div class="smk-tagline">Our Guiding Principles</div>
+                <h2 class="smk-section-heading">Motto, Vision & Purpose</h2>
+            </div>
+
+            <div class="smk-pillars-grid">
+                
+                <!-- Card 1: Vision -->
+                <div class="smk-pillar-card smk-card-vision">
+                    <div class="smk-pillar-icon">
+                        <i class="bi bi-eye-fill"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To provide quality education that blends academic excellence with moral values, discipline, creativity, leadership, and holistic development. We strive to create a stimulating learning environment where students are encouraged to think independently, discover their talents, embrace innovation, and face future challenges with confidence.
+                    </p>
+                </div>
+
+                <!-- Card 2: Motto (Center, Highlighted) -->
+                <div class="smk-pillar-card smk-card-motto">
+                    <div class="smk-pillar-icon">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <span class="smk-motto-sub">Knowledge Through Education</span>
+                    <h3>Born to Be Great</h3>
+                    <p>
+                        We believe that education is the foundation of knowledge, character, and lifelong success. Guided by our motto, we are committed to nurturing every student's potential and empowering them to become confident, responsible, and compassionate individuals.
+                    </p>
+                </div>
+
+                <!-- Card 3: Purpose -->
+                <div class="smk-pillar-card smk-card-purpose">
+                    <div class="smk-pillar-icon">
+                        <!-- Replaced compass with bullseye -->
+                        <i class="bi bi-bullseye"></i>
+                    </div>
+                    <h3>Our Purpose</h3>
+                    <p>
+                        Our belief is simple: Every child has the potential to achieve greatness, and the right education provides the path to realise it. We aim to inspire young minds to dream big, achieve their goals, and contribute meaningfully to society.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</article>
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+<footer class="smk-footer">
+    <div class="smk-footer-glow"></div>
+
+    <div class="smk-footer-main">
+        <div class="container">
+            <div class="smk-footer-brand-row">
+                <div class="smk-footer-brand">
+                    <a href="index.html" class="smk-footer-logo" aria-label="Sarojini Madhusudan Kushe Educational Institution">
+                        <figure class="cr-figure">
+                            <img src="images/sarojini-madhusudan-kushe-logo1.png" alt="Sarojini Madhusudan Kushe Educational Institution">
+                            <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution</figcaption>
+                        </figure>
+                    </a>
+                    <div class="smk-footer-brand-line"></div>
+                    <p class="smk-footer-description">
+                        Nurturing minds, building brighter futures through quality education, strong values and lifelong learning.
+                    </p>
+                    <div class="smk-footer-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="smk-footer-links-area">
+                    <div>
+                        <h3 class="smk-footer-group-title">Quick Links <span></span></h3>
+                        <ul class="smk-footer-links">
+                            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-about-sm-kushe.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-courses.html"><i class="bi bi-chevron-right"></i> Courses Offered</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-hods-staff.html"><i class="bi bi-chevron-right"></i> Departments &amp; Staff</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-facilities.html"><i class="bi bi-chevron-right"></i> Facilities</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="smk-footer-group-title">Explore <span></span></h3>
+                        <ul class="smk-footer-links">
+                            <li><a href="sarojini-madhusudan-kushe-academic-achievements.html"><i class="bi bi-chevron-right"></i> Achievements</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-news-events.html"><i class="bi bi-chevron-right"></i> News &amp; Events</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="smk-footer-group-title">Student Support <span></span></h3>
+                        <ul class="smk-footer-links">
+                            <li><a href="sarojini-madhusudan-kushe-student-space.html"><i class="bi bi-chevron-right"></i> Student Space</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-scholarships.html"><i class="bi bi-chevron-right"></i> Scholarships</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-mentor-mentee.html"><i class="bi bi-chevron-right"></i> Mentor - Mentee</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-class-teacher.html"><i class="bi bi-chevron-right"></i> Class Teacher</a></li>
+                            <li><a href="sarojini-madhusudan-kushe-academic-calendar.html"><i class="bi bi-chevron-right"></i> Academic Calendar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="smk-footer-contact-strip">
+                <div class="smk-footer-contact-item">
+                    <div class="smk-footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                    <div>
+                        <p class="smk-footer-contact-label">Call Us</p>
+                        <a href="tel:+918242423332" class="smk-footer-contact-text">+91 824 2423332</a><br>
+                        <a href="tel:+919355423332" class="smk-footer-contact-text">+91 93554 23332</a>
+                    </div>
+                </div>
+                <div class="smk-footer-contact-item">
+                    <div class="smk-footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <p class="smk-footer-contact-label">Email</p>
+                        <a href="mailto:info@smkushe.org" class="smk-footer-contact-text">info@smkushe.org</a>
+                    </div>
+                </div>
+                <div class="smk-footer-contact-item">
+                    <div class="smk-footer-contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <p class="smk-footer-contact-label">Visit Us</p>
+                        <p class="smk-footer-contact-text">P.V.S. Baug, Attavar, Mangalore - 575001, Karnataka, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="smk-footer-bottom">
+        <div class="container">
+            <div class="smk-footer-bottom-grid">
+                <p class="smk-footer-copyright">© 2026 Sarojini Madhusudan Kushe Educational Institution. All Rights Reserved.</p>
+                <div class="smk-footer-motto">
+                    <span class="smk-footer-motto-line"></span>
+                    <span class="smk-footer-motto-text">LEARN &nbsp;•&nbsp; GROW &nbsp;•&nbsp; EXCEL</span>
+                    <span class="smk-footer-motto-line"></span>
+                </div>
+                <div class="smk-footer-powered">
+                    <span>Powered by</span>
+                    <strong>Audira Solutions Private Limited</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================================
+     OFFCANVAS MENU
+========================================================= -->
+<div class="offcanvas offcanvas-end smk-offcanvas" tabindex="-1" id="smkMenu" aria-labelledby="smkMenuLabel">
+    <div class="smk-offcanvas-head">
+        <figure class="cr-figure">
+            <img src="images/sarojini-madhusudan-kushe-logo1.png" alt="Sarojini Madhusudan Kushe Educational Institution" class="smk-offcanvas-logo">
+            <figcaption class="cr-only">Sarojini Madhusudan Kushe Educational Institution</figcaption>
+        </figure>
+        <button type="button" class="smk-close" data-bs-dismiss="offcanvas" aria-label="Close Menu">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="smk-menu-body">
+        <div class="smk-menu-intro">
+            <div class="smk-menu-intro-title" id="smkMenuLabel">Explore Our Institution</div>
+            <p class="smk-menu-intro-text">Discover academics, facilities, achievements and student support.</p>
+        </div>
+
+        <div class="smk-menu-grid">
+            <div class="smk-menu-column">
+                <div class="smk-menu-card">
+                    <div class="smk-menu-item">
+                        <a href="index.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-house-door-fill"></i></span>
+                            <span>Home</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-person-fill"></i></span>
+                            <span>About Us</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-about-sm-kushe.html">About SM Kushe</a>
+                            <a href="sarojini-madhusudan-kushe-principal-message.html">Principal's Message</a>
+                            <a href="sarojini-madhusudan-kushe-vice-principal-message.html">Vice Principal's Message</a>
+                            <a href="sarojini-madhusudan-kushe-head-master-message.html">Head Master's Message</a>
+                        </div>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-courses.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-book-fill"></i></span>
+                            <span>Courses Offered</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-people-fill"></i></span>
+                            <span>Departments &amp; Staff</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-hods-staff.html">HODs and staffs</a>
+                            <a href="sarojini-madhusudan-kushe-college-departments.html">College</a>
+                            <a href="sarojini-madhusudan-kushe-school-departments.html">School</a>
+                        </div>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-facilities.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-building-fill"></i></span>
+                            <span>Facilities</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-trophy-fill"></i></span>
+                            <span>Achievements</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-academic-achievements.html">Academic Achievements</a>
+                            <a href="sarojini-madhusudan-kushe-cultural-achievements.html">Cultural Achievements</a>
+                            <a href="sarojini-madhusudan-kushe-extracurricular-activities.html">Extracurricular Activities</a>
+                            <a href="sarojini-madhusudan-kushe-sports.html">Sports</a>
+                            <a href="sarojini-madhusudan-kushe-rangers-rovers.html">Rangers &amp; Rovers</a>
+                            <a href="sarojini-madhusudan-kushe-bulbul.html">Bulbul</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="smk-menu-column">
+                <div class="smk-menu-card">
+                    <div class="smk-menu-item">
+                        <button type="button" class="smk-menu-link smk-submenu-toggle">
+                            <span class="smk-menu-icon"><i class="bi bi-mortarboard-fill"></i></span>
+                            <span>Student Support</span>
+                            <i class="bi bi-chevron-down smk-arrow"></i>
+                        </button>
+                        <div class="smk-submenu">
+                            <a href="sarojini-madhusudan-kushe-student-space.html">Student Space (Separate Login)</a>
+                            <a href="sarojini-madhusudan-kushe-mentor-mentee.html">Mentor–Mentee</a>
+                            <a href="sarojini-madhusudan-kushe-class-teacher.html">Class Teacher</a>
+                            <a href="sarojini-madhusudan-kushe-scholarships.html">Scholarships</a>
+                            <a href="sarojini-madhusudan-kushe-capacity-enhancement-activities.html">Capacity Enhancement Activities</a>
+                            <a href="sarojini-madhusudan-kushe-academic-calendar.html">Academic Calendar</a>
+                        </div>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-news-events.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-calendar-event-fill"></i></span>
+                            <span>News &amp; Events</span>
+                        </a>
+                    </div>
+
+                    <div class="smk-menu-item">
+                        <a href="sarojini-madhusudan-kushe-contact.html" class="smk-menu-link">
+                            <span class="smk-menu-icon"><i class="bi bi-telephone-fill"></i></span>
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script> 
+<script>
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+const smkHeader = document.getElementById("smkHeader");
+let smkScrollTicking = false;
+
+function smkHandleScroll() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 0) {
+        smkHeader.classList.add("scrolled");
+    } else {
+        smkHeader.classList.remove("scrolled");
+    }
+    smkScrollTicking = false;
+}
+
+window.addEventListener("scroll", function() {
+    if (!smkScrollTicking) {
+        window.requestAnimationFrame(smkHandleScroll);
+        smkScrollTicking = true;
+    }
+}, { passive: true });
+
+smkHandleScroll();
+
+/* =========================================================
+   SUBMENU
+========================================================= */
+const smkSubmenuButtons = document.querySelectorAll(".smk-submenu-toggle");
+smkSubmenuButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const currentItem = this.closest(".smk-menu-item");
+        const wasOpen = currentItem.classList.contains("open");
+
+        document.querySelectorAll(".smk-menu-item.open").forEach(function(item) {
+            item.classList.remove("open");
+        });
+
+        if (!wasOpen) {
+            currentItem.classList.add("open");
+        }
+    });
+});
+
+/* =========================================================
+   NORMAL LINKS CLOSE MENU
+========================================================= */
+document.querySelectorAll(".smk-menu-link:not(.smk-submenu-toggle)").forEach(function(link) {
+    link.addEventListener("click", function() {
+        const menu = document.getElementById("smkMenu");
+        const instance = bootstrap.Offcanvas.getInstance(menu);
+        if (instance) {
+            instance.hide();
+        }
+    });
+});
+
+/* =========================================================
+   RESET SUBMENUS WHEN MENU CLOSES
+========================================================= */
+document.getElementById("smkMenu").addEventListener("hidden.bs.offcanvas", function() {
+    document.querySelectorAll(".smk-menu-item.open").forEach(function(item) {
+        item.classList.remove("open");
+    });
+});
+
+/* =========================================================
+   ALWAYS START OFFCANVAS FROM PAGE TOP
+========================================================= */
+document.getElementById("smkMenu").addEventListener("show.bs.offcanvas", function() {
+    this.style.top = "0px";
+    this.style.bottom = "0px";
+    this.style.height = "100vh";
+});
+</script>
+</body>
+</html>
