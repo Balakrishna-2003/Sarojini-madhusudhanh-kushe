@@ -365,7 +365,8 @@
         /* Image Avatar */
         .smk-faculty-avatar {
             width: 100%;
-            height: 260px; /* Increased height for proper portrait framing */
+            height: auto; /* Changed to auto */
+            margin: 0;
             background: var(--smk-powder, #f9f0f4);
             position: relative;
             overflow: hidden;
@@ -373,10 +374,12 @@
 
         .smk-faculty-photo {
             width: 100%;
-            height: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5; /* Maintains uniform shape since height is auto */
             object-fit: cover;
             object-position: top center;
             transition: transform 0.6s ease;
+            display: block;
         }
 
         .smk-faculty-card:hover .smk-faculty-photo {
@@ -456,9 +459,6 @@
         @media (max-width: 575.98px) {
             .smk-faculty-grid {
                 grid-template-columns: 1fr;
-            }
-            .smk-faculty-avatar {
-                height: 320px;
             }
         }
     </style>
@@ -617,9 +617,10 @@
                 
                 <!-- 1. CHANDRIKA -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/chandrika.jpg" alt="Chandrika" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Chandrika</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Chandrika</h3>
                         <div class="smk-faculty-role">Lect. in Economics</div>
@@ -629,9 +630,10 @@
 
                 <!-- 2. Vinutha R -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/vinutha-r.jpg" alt="Vinutha R" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Vinutha R</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Vinutha R</h3>
                         <div class="smk-faculty-role">Lect. in Commerce</div>
@@ -641,9 +643,10 @@
 
                 <!-- 3. Pushpavathi -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/pushpavathi.jpg" alt="Pushpavathi" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Pushpavathi</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Pushpavathi</h3>
                         <div class="smk-faculty-role">Lect. in Kannada</div>
@@ -653,9 +656,10 @@
 
                 <!-- 4. Jayashree Kotian -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/jayashree-kotian.jpg" alt="Jayashree Kotian" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Jayashree Kotian</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Jayashree Kotian</h3>
                         <div class="smk-faculty-role">Lect. in English</div>
@@ -665,9 +669,10 @@
 
                 <!-- 6. Akshitha Shetty -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/akshitha-shetty.jpg" alt="Akshitha Shetty" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Akshitha Shetty</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Akshitha Shetty</h3>
                         <div class="smk-faculty-role">Lect. in Computer Science</div>
@@ -677,9 +682,10 @@
 
                 <!-- 7. Kavitha Ramesh -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/kavitha-ramesh.jpg" alt="Kavitha Ramesh" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Kavitha Ramesh</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Kavitha Ramesh</h3>
                         <div class="smk-faculty-role">Lect. in Biology</div>
@@ -689,9 +695,10 @@
 
                 <!-- 8. Shilpa Acharya -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/shilpa-acharya.jpg" alt="Shilpa Acharya" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Shilpa Acharya</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Shilpa Acharya</h3>
                         <div class="smk-faculty-role">Lect. in Chemistry</div>
@@ -701,9 +708,10 @@
 
                 <!-- 9. Sridevi Shetty -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/sridevi-shetty.jpg" alt="Sridevi Shetty" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Sridevi Shetty</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Sridevi Shetty</h3>
                         <div class="smk-faculty-role">Lect. in Mathematics</div>
@@ -713,9 +721,10 @@
 
                 <!-- 10. Deepika Shetty -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/deepika-shetty.jpg" alt="Deepika Shetty" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Deepika Shetty</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Deepika Shetty</h3>
                         <div class="smk-faculty-role">Lect. in Physics</div>
@@ -725,9 +734,10 @@
 
                 <!-- 11. Pushparaj -->
                 <div class="smk-faculty-card">
-                    <div class="smk-faculty-avatar">
+                    <figure class="cr-figure smk-faculty-avatar">
                         <img src="images/college-staff/pushparaj.jpg" alt="Pushparaj" class="smk-faculty-photo">
-                    </div>
+                        <figcaption class="cr-only">Pushparaj</figcaption>
+                    </figure>
                     <div class="smk-faculty-info">
                         <h3 class="smk-faculty-name">Pushparaj</h3>
                         <div class="smk-faculty-role">Physical Director</div>
