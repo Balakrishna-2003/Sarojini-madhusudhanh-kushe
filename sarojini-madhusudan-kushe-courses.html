@@ -23,7 +23,7 @@
          PAGE SPECIFIC STYLES
     ========================================================= -->
     <style>
-        /* --- COURSES HERO SECTION (75vh) --- */
+        /* --- ORIGINAL COURSES HERO SECTION (UNCHANGED) --- */
         .smk-crs-hero {
             position: relative;
             background: var(--smk-ivory);
@@ -230,7 +230,7 @@
         }
 
         /* =========================================================
-           NEW COURSES DETAILS SECTION
+           EXPANDED COURSES DETAILS SECTION
         ========================================================= */
         .smk-course-details {
             position: relative;
@@ -239,7 +239,6 @@
             overflow: hidden;
         }
 
-        /* Background texture */
         .smk-course-details::before {
             content: '';
             position: absolute;
@@ -248,7 +247,7 @@
             width: 50%;
             height: 100%;
             background: radial-gradient(circle at 100% 0%, var(--smk-rose-soft) 0%, transparent 50%);
-            opacity: 0.4;
+            opacity: 0.3;
             z-index: 0;
             pointer-events: none;
         }
@@ -261,10 +260,9 @@
             padding: 0 20px;
         }
 
-        /* --- Section Header --- */
         .smk-cd-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .smk-cd-header .smk-crs-eyebrow {
@@ -273,95 +271,156 @@
 
         .smk-cd-header h2 {
             font-family: "Playfair Display", serif;
-            font-size: clamp(36px, 4vw, 48px);
+            font-size: clamp(38px, 4vw, 48px);
             color: var(--smk-plum);
             margin: 0;
         }
 
-        /* --- Track Cards (Explore Our Courses) --- */
+        /* --- Track Cards --- */
         .smk-track-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .smk-track-card {
             position: relative;
-            background: var(--smk-ivory);
+            background: var(--smk-white);
             border: 1px solid var(--smk-border);
-            border-radius: 24px;
-            padding: 50px 45px;
-            overflow: hidden;
-            transition: all 0.4s ease;
+            border-radius: 20px;
+            padding: 45px 40px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            box-shadow: 0 10px 30px rgba(92, 30, 68, 0.02);
+            overflow: hidden;
+        }
+
+        .smk-track-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--smk-rose), var(--smk-gold));
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .smk-track-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 45px rgba(92, 30, 68, 0.08);
-            border-color: var(--smk-rose);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(92, 30, 68, 0.08);
+            border-color: transparent;
+        }
+
+        .smk-track-card:hover::before {
+            opacity: 1;
         }
 
         .smk-track-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--smk-white);
+            width: 65px;
+            height: 65px;
+            background: var(--smk-rose-soft);
             color: var(--smk-plum);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 10px 20px rgba(92, 30, 68, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .smk-track-card:hover .smk-track-icon {
+            background: var(--smk-plum);
+            color: var(--smk-white);
+            transform: scale(1.05) rotate(5deg);
         }
 
         .smk-track-card h3 {
             font-family: "Playfair Display", serif;
-            font-size: 28px;
+            font-size: 26px;
             color: var(--smk-plum);
             margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .smk-track-card p {
+        .smk-track-desc {
             font-family: "DM Sans", sans-serif;
-            font-size: 18px;
+            font-size: 15px;
             color: var(--smk-muted);
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
         }
 
-        /* --- Discover More Grid --- */
-        .smk-discover-header {
+        .smk-track-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            border-top: 1px solid var(--smk-border);
+            padding-top: 20px;
+        }
+
+        .smk-track-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+            color: var(--smk-text);
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .smk-track-list li i {
+            color: var(--smk-gold);
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .smk-track-list li strong {
+            color: var(--smk-plum);
+            font-weight: 600;
+        }
+
+        /* --- The SMK Advantage Section --- */
+        .smk-advantage-section {
+            background: var(--smk-ivory);
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin-top: 20px;
+        }
+
+        .smk-adv-header {
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
-        .smk-discover-header h3 {
+        .smk-adv-header h3 {
             font-family: "Playfair Display", serif;
             font-size: 32px;
             color: var(--smk-plum);
             margin: 0;
+            white-space: nowrap;
         }
 
-        .smk-discover-header::after {
+        .smk-adv-header::after {
             content: '';
             flex: 1;
             height: 1px;
-            background: var(--smk-border);
+            background: rgba(92, 30, 68, 0.1);
         }
 
         .smk-features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 30px;
         }
 
         .smk-feature-card {
@@ -370,32 +429,34 @@
             gap: 20px;
             background: var(--smk-white);
             padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--smk-border);
+            border-radius: 16px;
+            border: 1px solid rgba(92, 30, 68, 0.05);
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(92, 30, 68, 0.02);
         }
 
         .smk-feature-card:hover {
-            border-color: var(--smk-plum);
+            border-color: var(--smk-rose-soft);
             box-shadow: 0 10px 30px rgba(92, 30, 68, 0.05);
+            transform: translateY(-3px);
         }
 
         .smk-feature-icon {
-            flex: 0 0 50px;
-            width: 50px;
-            height: 50px;
+            flex: 0 0 55px;
+            width: 55px;
+            height: 55px;
             background: var(--smk-rose-soft);
             color: var(--smk-plum);
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 24px;
         }
 
         .smk-feature-content h4 {
             font-family: "DM Sans", sans-serif;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 700;
             color: var(--smk-plum-dark);
             margin-bottom: 8px;
@@ -414,13 +475,14 @@
             .smk-course-details { padding: 80px 0; }
             .smk-track-grid { grid-template-columns: 1fr; gap: 20px; margin-bottom: 60px; }
             .smk-features-grid { grid-template-columns: 1fr; }
+            .smk-advantage-section { padding: 40px 30px; }
         }
 
         @media (max-width: 575.98px) {
-            .smk-track-card { padding: 35px 25px; }
+            .smk-track-card { padding: 30px 25px; }
             .smk-track-card h3 { font-size: 24px; }
-            .smk-track-card p { font-size: 16px; }
             .smk-feature-card { padding: 20px; flex-direction: column; gap: 15px; }
+            .smk-adv-header h3 { font-size: 24px; white-space: normal; }
         }
     </style>
 </head>
@@ -492,7 +554,7 @@
 
 <article>
     <!-- =========================================================
-         COURSES HERO SECTION
+         ORIGINAL COURSES HERO SECTION
     ========================================================= -->
     <section class="smk-crs-hero">
         <div class="smk-crs-container">
@@ -540,7 +602,7 @@
     </section>
 
     <!-- =========================================================
-         NEW COURSES DETAILS SECTION
+         EXPANDED COURSES DETAILS SECTION
     ========================================================= -->
     <section class="smk-course-details" id="courses">
         <div class="smk-cd-container">
@@ -554,77 +616,129 @@
             <!-- Track Cards -->
             <div class="smk-track-grid">
                 
-                <!-- School Track -->
+                <!-- 1. School Track -->
                 <div class="smk-track-card">
                     <div class="smk-track-icon">
                         <i class="bi bi-building"></i>
                     </div>
                     <h3>School Education</h3>
-                    <p>PRE K.G, L.K.G, U.K.G & I STD to IX STD</p>
+                    <p class="smk-track-desc">Our school program focuses on building a strong foundation through a comprehensive curriculum that balances academics with sports, arts, and moral education. We emphasize inquiry-based learning to spark curiosity from an early age.</p>
+                    <ul class="smk-track-list">
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>Pre-Primary:</strong> Pre-K.G, L.K.G, U.K.G (Activity-based learning)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>Primary:</strong> I STD to V STD (Core subjects & language skills)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>Middle School:</strong> VI STD to IX STD (Conceptual depth & practical application)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Focus on holistic development and character building.</span></li>
+                    </ul>
                 </div>
 
-                <!-- PUC Track -->
+                <!-- 2. PUC Track -->
                 <div class="smk-track-card">
                     <div class="smk-track-icon">
-                        <i class="bi bi-mortarboard"></i>
+                        <i class="bi bi-journal-bookmark-fill"></i>
                     </div>
                     <h3>Pre-University Course</h3>
-                    <p>PUC – PCMB, PCMC, CEBA, HEBA</p>
+                    <p class="smk-track-desc">Our PUC program is designed to bridge the gap between school and university. We offer specialized combinations that rigorously prepare students for competitive entrance exams while ensuring strong academic fundamentals.</p>
+                    <ul class="smk-track-list">
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>PCMB:</strong> Physics, Chemistry, Math, Biology (Medical/Engineering)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>PCMC:</strong> Physics, Chemistry, Math, Computer Science (Engineering/Tech)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>CEBA:</strong> Commerce, Economics, Business Studies, Accountancy (Finance/CA)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>HEBA:</strong> History, Economics, Business Studies, Accountancy (Law/Humanities)</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Integrated coaching for NEET, JEE, and CET.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 3. Undergraduate Track -->
+                <div class="smk-track-card">
+                    <div class="smk-track-icon">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <h3>Undergraduate Courses</h3>
+                    <p class="smk-track-desc">Our degree programs are industry-aligned, focusing on practical skills, internships, and modern curriculum design to ensure our graduates are highly employable or ready to pursue advanced studies.</p>
+                    <ul class="smk-track-list">
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>B.Com:</strong> Advanced accounting, taxation, corporate finance, and business law.</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>BBA:</strong> Marketing, HR management, entrepreneurship, and business analytics.</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span><strong>BCA:</strong> Software engineering, web development, database management, and AI basics.</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Industry visits, expert guest lectures, and soft-skill training.</span></li>
+                    </ul>
                 </div>
 
             </div>
 
-            <!-- Discover More Section -->
-            <div class="smk-discover-header">
-                <h3>Discover More</h3>
-            </div>
-
-            <div class="smk-features-grid">
-                
-                <!-- Feature 1 -->
-                <div class="smk-feature-card">
-                    <div class="smk-feature-icon">
-                        <i class="bi bi-people"></i>
-                    </div>
-                    <div class="smk-feature-content">
-                        <h4>Limited Students in a Batch</h4>
-                        <p>We maintain small batch sizes to ensure personalized attention, better interaction, and effective learning for every student.</p>
-                    </div>
+            <!-- The SMK Advantage Section (Discover More) -->
+            <div class="smk-advantage-section">
+                <div class="smk-adv-header">
+                    <h3>Discover More</h3>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="smk-feature-card">
-                    <div class="smk-feature-icon">
-                        <i class="bi bi-star"></i>
+                <div class="smk-features-grid">
+                    
+                    <!-- Feature 1 -->
+                    <div class="smk-feature-card">
+                        <div class="smk-feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div class="smk-feature-content">
+                            <h4>Limited Students in a Batch</h4>
+                            <p>We strictly maintain small batch sizes to ensure personalized attention. Every student gets the opportunity to participate, ask questions, and receive individualized guidance from teachers.</p>
+                        </div>
                     </div>
-                    <div class="smk-feature-content">
-                        <h4>Excellent Facilities & Faculty</h4>
-                        <p>Our campus features top-tier facilities, guided by a team of highly qualified and experienced teaching staff.</p>
-                    </div>
-                </div>
 
-                <!-- Feature 3 -->
-                <div class="smk-feature-card">
-                    <div class="smk-feature-icon">
-                        <i class="bi bi-music-note-beamed"></i>
+                    <!-- Feature 2 -->
+                    <div class="smk-feature-card">
+                        <div class="smk-feature-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="smk-feature-content">
+                            <h4>Excellent Facilities & Faculty</h4>
+                            <p>Our campus features modern classrooms, well-equipped science and computer labs, and a vast library. Our faculty comprises highly qualified, experienced, and dedicated educators.</p>
+                        </div>
                     </div>
-                    <div class="smk-feature-content">
-                        <h4>Arts, Culture & Wellness</h4>
-                        <p>Comprehensive training in Yoga, Bhagavad-Gita, Karate, Tableau, Classical dance, Classical music, flute, and painting classes.</p>
-                    </div>
-                </div>
 
-                <!-- Feature 4 -->
-                <div class="smk-feature-card">
-                    <div class="smk-feature-icon">
-                        <i class="bi bi-bullseye"></i>
+                    <!-- Feature 3 -->
+                    <div class="smk-feature-card">
+                        <div class="smk-feature-icon">
+                            <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                        <div class="smk-feature-content">
+                            <h4>Arts, Culture & Wellness</h4>
+                            <p>Beyond academics, we offer comprehensive training in Yoga, Bhagavad-Gita, Karate, Tableau, Classical dance, Classical music, flute, and painting to ensure holistic well-being.</p>
+                        </div>
                     </div>
-                    <div class="smk-feature-content">
-                        <h4>Competitive Exam Training</h4>
-                        <p>Integrated basic training for NEET, CET, CA, CS, and JEE to give our students a competitive edge for their future.</p>
-                    </div>
-                </div>
 
+                    <!-- Feature 4 -->
+                    <div class="smk-feature-card">
+                        <div class="smk-feature-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <div class="smk-feature-content">
+                            <h4>Competitive Exam Training</h4>
+                            <p>We provide integrated basic training for NEET, CET, CA, CS, and JEE. Our specialized coaching modules give students a decisive competitive edge for their future careers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 (NEW) -->
+                    <div class="smk-feature-card">
+                        <div class="smk-feature-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div class="smk-feature-content">
+                            <h4>Smart Classrooms & Digital Learning</h4>
+                            <p>Our classrooms are equipped with interactive smart boards and digital learning tools, bringing complex concepts to life and enhancing the overall learning experience.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 (NEW) -->
+                    <div class="smk-feature-card">
+                        <div class="smk-feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="smk-feature-content">
+                            <h4>Safe & Secure Campus</h4>
+                            <p>The safety of our students is paramount. We have a fully secure campus with CCTV surveillance, trained security personnel, and a strict code of conduct.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -777,7 +891,8 @@
                         </button>
                         <div class="smk-submenu">
                             <a href="sarojini-madhusudan-kushe-about-sm-kushe.html">About SM Kushe</a>
-                            <a href="sarojini-madhusudan-kushe-principal-message.html">Principal's Message</a>
+                            <a href="sarojini-madhusudan-kushe-md-message.html">MD's Message</a>
+<a href="sarojini-madhusudan-kushe-principal-message.html">Principal's Message</a>
                             <a href="sarojini-madhusudan-kushe-vice-principal-message.html">Vice Principal's Message</a>
                             <a href="sarojini-madhusudan-kushe-head-master-message.html">Head Master's Message</a>
                         </div>
@@ -810,6 +925,12 @@
                         </a>
                     </div>
 
+                    
+                </div>
+            </div>
+
+            <div class="smk-menu-column">
+                <div class="smk-menu-card">
                     <div class="smk-menu-item">
                         <button type="button" class="smk-menu-link smk-submenu-toggle">
                             <span class="smk-menu-icon"><i class="bi bi-trophy-fill"></i></span>
@@ -825,11 +946,6 @@
                             <a href="sarojini-madhusudan-kushe-bulbul.html">Bulbul</a>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="smk-menu-column">
-                <div class="smk-menu-card">
                     <div class="smk-menu-item">
                         <button type="button" class="smk-menu-link smk-submenu-toggle">
                             <span class="smk-menu-icon"><i class="bi bi-mortarboard-fill"></i></span>
